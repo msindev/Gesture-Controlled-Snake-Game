@@ -23,7 +23,7 @@ video_capture = cv2.VideoCapture(0)
 time.sleep(2)
 
 while True:
-    
+
     game_window = pyautogui.locateOnScreen(r'images\SnakeGameWelcomeScreen.png')
     game_window_center = pyautogui.center(game_window)
     pyautogui.click(game_window_center)
@@ -69,6 +69,15 @@ while True:
                 dirY = 'North' if np.sign(dY) == 1 else 'South'
 
             direction = dirX if dirX != '' else dirY
+
+        if direction == 'East':
+            pyautogui.press('right')
+        elif direction == 'West':
+            pyautogui.press('left')
+        elif direction == 'North':
+            pyautogui.press('up')
+        elif direction == 'South':
+            pyautogui.press('down')
 
         thickness = int(np.sqrt(buffer / float(i + 1)) * 2.5)
         cv2.line(frame, pts[i - 1], pts[i], (0, 0, 255), thickness)
