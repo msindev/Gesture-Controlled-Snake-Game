@@ -23,6 +23,11 @@ video_capture = cv2.VideoCapture(0)
 time.sleep(2)
 
 while True:
+    
+    game_window = pyautogui.locateOnScreen(r'images\SnakeGameWelcomeScreen.png')
+    game_window_center = pyautogui.center(game_window)
+    pyautogui.click(game_window_center)
+
     ret, frame = video_capture.read()
     frame = cv2.flip(frame,1)
     frame = imutils.resize(frame, width = 600)
