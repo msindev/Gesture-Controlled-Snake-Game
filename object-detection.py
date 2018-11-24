@@ -30,4 +30,34 @@ while True:
 
     cv2.imshow('Masked Output', mask)
 
-    cnts = cv2.findContours(mask.copy())
+    cnts = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+
+    center = None
+
+    if(len(cnts)) > 0:
+        c = max(cnts, key = cv2.contourArea)
+        ((x,y), radius) = cv2.minEnclosingCircle(c)
+
+        M = cv2.moments(c)
+        center = (int(M['m10'] / M['m00']), int(M['m01'] / M['m00']))
+
+        if radius > 10:
+            cv2.circle(frame, (int(x), int(y)), int(radius), (0,255,255), 2)
+            cv2.circle(frame, center, 5, (0,255,255), -1)
+
+        pts = appendleft(center)
+
+        for i in range(1, len(pts)):
+            if pts[i-1] is None or pts[i] is None:
+                continue
+
+        thickness = int(np.sqrt(buffer / float(i + 1)) * 2.5)
+		cv2.line(frame, pts[i - 1], pts[i], (0, 0, 255), thickness)
+
+        cv2.imshow('Frame', frame)
+        key = cv2.waitKey(1) & 0xFF
+
+        if(key == ord('q')):
+            break
+video_capture.release()
+cv2.destroyAllWindows()
