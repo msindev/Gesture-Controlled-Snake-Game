@@ -3,14 +3,16 @@ Using OpenCV library for vision tasks and HSV color space for detecting object o
 
 #Import necessary modules
 import cv2
+import imutils
 import numpy as np
 from collections import deque
 import time
+import math
 
 greenLower = (29, 86, 6)
 greenUpper = (64, 255, 255)
 
-buffer = 50
+buffer = 20
 
 pts = deque(maxlen = buffer)
 
@@ -20,8 +22,9 @@ time.sleep(2)
 
 while True:
     ret, frame = video_capture.read()
-    frame = cv.flip(frame,1)
-    blurred_frame = cv2.GaussianBlur(frame, (10,10), 0)
+    frame = cv2.flip(frame,1)
+    frame = imutils.resize(frame, width = 600)
+    blurred_frame = cv2.GaussianBlur(frame, (5,5), 0)
     hsv_converted_frame = cv2.cvtColor(blurred_frame, cv2.COLOR_BGR2HSV)
 
     mask = cv2.inRange(hsv_converted_frame, greenLower, greenUpper)
@@ -30,7 +33,7 @@ while True:
 
     cv2.imshow('Masked Output', mask)
 
-    cnts = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
+    _,cnts,_ = cv2.findContours(mask.copy(), cv2.RETR_EXTERNAL, cv2.CHAIN_APPROX_SIMPLE)
 
     center = None
 
@@ -45,14 +48,14 @@ while True:
             cv2.circle(frame, (int(x), int(y)), int(radius), (0,255,255), 2)
             cv2.circle(frame, center, 5, (0,255,255), -1)
 
-        pts = appendleft(center)
+        pts.appendleft(center)
 
         for i in range(1, len(pts)):
             if pts[i-1] is None or pts[i] is None:
                 continue
 
-        thickness = int(np.sqrt(buffer / float(i + 1)) * 2.5)
-		cv2.line(frame, pts[i - 1], pts[i], (0, 0, 255), thickness)
+            thickness = int(np.sqrt(buffer / float(i + 1)) * 2.5)
+            cv2.line(frame, pts[i - 1], pts[i], (0, 0, 255), thickness)
 
         cv2.imshow('Frame', frame)
         key = cv2.waitKey(1) & 0xFF
