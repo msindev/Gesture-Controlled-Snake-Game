@@ -5,7 +5,7 @@ pygame.init()
 pygame.mixer.init()
 pygame.font.init()
 
-FPS = 7
+FPS = 3
 WINDOWWIDTH = 640
 WINDOWHEIGHT = 480
 CELLSIZE = 20
