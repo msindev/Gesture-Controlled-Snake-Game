@@ -71,7 +71,7 @@ while True:
             #Draw circles around the object as well as its centre
             cv2.circle(frame, (int(x), int(y)), int(radius), (0,255,255), 2)
             cv2.circle(frame, center, 5, (0,255,255), -1)
-        #Append the detected object in the frame to pts deque structure
+            #Append the detected object in the frame to pts deque structure
             pts.appendleft(center)
 
     #Using numpy arange function for better performance. Loop till all detected points
