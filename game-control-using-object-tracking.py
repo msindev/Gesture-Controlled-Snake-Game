@@ -13,6 +13,8 @@ greenUpper = (64, 255, 255)
 
 buffer = 20
 
+flag = 0
+
 pts = deque(maxlen = buffer)
 counter = 0
 (dX, dY) = (0, 0)
@@ -22,16 +24,20 @@ video_capture = cv2.VideoCapture(0)
 
 time.sleep(2)
 
+width,height = pyautogui.size()
+
+
 while True:
 
-    game_window = pyautogui.locateOnScreen(r'images\SnakeGameWelcomeScreen.png')
+    '''game_window = pyautogui.locateOnScreen(r'images\SnakeGameWelcomeScreen.png')
     game_window_center = pyautogui.center(game_window)
-    pyautogui.click(game_window_center)
+    pyautogui.click(game_window_center)'''
+
 
     ret, frame = video_capture.read()
     frame = cv2.flip(frame,1)
     frame = imutils.resize(frame, width = 600)
-    blurred_frame = cv2.GaussianBlur(frame, (5,5), 0)
+    blurred_frame = cv2.GaussianBlur(frame, (11,11), 0)
     hsv_converted_frame = cv2.cvtColor(blurred_frame, cv2.COLOR_BGR2HSV)
 
     mask = cv2.inRange(hsv_converted_frame, greenLower, greenUpper)
@@ -70,23 +76,32 @@ while True:
 
             direction = dirX if dirX != '' else dirY
 
-        if direction == 'East':
-            pyautogui.press('right')
-        elif direction == 'West':
-            pyautogui.press('left')
-        elif direction == 'North':
-            pyautogui.press('up')
-        elif direction == 'South':
-            pyautogui.press('down')
+        '''thickness = int(np.sqrt(buffer / float(i + 1)) * 2.5)
+        cv2.line(frame, pts[i - 1], pts[i], (0, 0, 255), thickness)'''
 
-        thickness = int(np.sqrt(buffer / float(i + 1)) * 2.5)
-        cv2.line(frame, pts[i - 1], pts[i], (0, 0, 255), thickness)
+    if direction == 'East':
+        pyautogui.press('right')
+        pyautogui.PAUSE = 1
+    elif direction == 'West':
+        pyautogui.press('left')
+        pyautogui.PAUSE = 1
+    elif direction == 'North':
+        pyautogui.press('up')
+        pyautogui.PAUSE = 1
+    elif direction == 'South':
+        pyautogui.press('down')
+        pyautogui.PAUSE = 1
+
 
     cv2.putText(frame, direction, (20,40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 3)
 
     cv2.imshow('Window- Direction Detection', frame)
     key = cv2.waitKey(1) & 0xFF
     counter += 1
+
+    if (flag == 0):
+        pyautogui.click(int(width/2), int(height/2))
+        flag = 1
 
     if(key == ord('q')):
         break
