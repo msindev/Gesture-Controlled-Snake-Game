@@ -26,7 +26,6 @@ class WebcamVideoStream:
         return self.frame
     def stop(self):
         self.stopped = True
-        self.thread.join()
 
 """class VideoShow:
     def __init__(self, frame = None):
@@ -59,7 +58,7 @@ width,height = pyautogui.size()
 
 vs = WebcamVideoStream().start()
 #video_shower = VideoShow(vs.read()).start()
-
+pyautogui.click(int(width/2), int(height/2))
 while True:
 
     '''game_window = pyautogui.locateOnScreen(r'images\SnakeGameWelcomeScreen.png')
@@ -114,16 +113,20 @@ while True:
 
     if direction == 'East':
         pyautogui.press('right')
-        #pyautogui.PAUSE = 1
+        print("Right Pressed")
+        pyautogui.PAUSE = 4
     elif direction == 'West':
         pyautogui.press('left')
-        #pyautogui.PAUSE = 1
+        print("Left Pressed")
+        pyautogui.PAUSE = 4
     elif direction == 'North':
         pyautogui.press('up')
-        #pyautogui.PAUSE = 1
+        print("Up Pressed")
+        pyautogui.PAUSE = 4
     elif direction == 'South':
         pyautogui.press('down')
-        #pyautogui.PAUSE = 1
+        print("Down Pressed")
+        pyautogui.PAUSE = 4
 
 
     cv2.putText(frame, direction, (20,40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 3)
