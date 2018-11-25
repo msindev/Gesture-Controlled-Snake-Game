@@ -69,7 +69,6 @@ def runGame():
 			newHead = {'x': wormCoords[HEAD]['x'] + 1, 'y': wormCoords[HEAD]['y']}
 		elif direction == LEFT:
 			newHead = {'x': wormCoords[HEAD]['x'] - 1, 'y': wormCoords[HEAD]['y']}
-		
 		wormCoords.insert(0, newHead)
 
 #Drawing the Screen
@@ -114,7 +113,6 @@ def showStartScreen():
 		SCREEN.blit(titleText, titleTextRect)
 
 		drawPressKeyMsg()
-		
 		if checkForKeyPress():
 			pygame.event.get()
 			return
