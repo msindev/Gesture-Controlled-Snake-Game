@@ -114,22 +114,22 @@ while True:
 
     if direction == 'East':
         pyautogui.press('right')
-        pyautogui.PAUSE = 1
+        #pyautogui.PAUSE = 1
     elif direction == 'West':
         pyautogui.press('left')
-        pyautogui.PAUSE = 1
+        #pyautogui.PAUSE = 1
     elif direction == 'North':
         pyautogui.press('up')
-        pyautogui.PAUSE = 1
+        #pyautogui.PAUSE = 1
     elif direction == 'South':
         pyautogui.press('down')
-        pyautogui.PAUSE = 1
+        #pyautogui.PAUSE = 1
 
 
     cv2.putText(frame, direction, (20,40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 3)
 
     #video_shower.frame = frame
-    cv2.imshow('Window- Direction Detection', frame)
+    cv2.imshow('Game Control Window', frame)
     key = cv2.waitKey(1) & 0xFF
     counter += 1
 
