@@ -104,11 +104,11 @@ while True:
             dY = pts[-10][1] - pts[i][1]
             (dirX, dirY) = ('', '')
 
-            #If distance is greater than 100 pixels, considerable direction change has occured.
-            if np.abs(dX) > 100:
+            #If distance is greater than 50 pixels, considerable direction change has occured.
+            if np.abs(dX) > 50:
                 dirX = 'West' if np.sign(dX) == 1 else 'East'
 
-            if np.abs(dY) > 100:
+            if np.abs(dY) > 50:
                 dirY = 'North' if np.sign(dY) == 1 else 'South'
 
             #Set direction variable to the detected direction
