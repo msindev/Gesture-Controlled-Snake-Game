@@ -50,7 +50,7 @@ pts = deque(maxlen = buffer)
 counter = 0
 (dX, dY) = (0, 0)
 direction = ''
-
+last_pressed = ''
 
 time.sleep(2)
 
@@ -107,29 +107,35 @@ while True:
                 dirY = 'North' if np.sign(dY) == 1 else 'South'
 
             direction = dirX if dirX != '' else dirY
+            cv2.putText(frame, direction, (20,40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 3)
 
-        '''thickness = int(np.sqrt(buffer / float(i + 1)) * 2.5)
-        cv2.line(frame, pts[i - 1], pts[i], (0, 0, 255), thickness)'''
-
+        thickness = int(np.sqrt(buffer / float(i + 1)) * 2.5)
+        cv2.line(frame, pts[i - 1], pts[i], (0, 0, 255), thickness)
     if direction == 'East':
-        pyautogui.press('right')
-        print("Right Pressed")
-        pyautogui.PAUSE = 4
+        if last_pressed != 'right':
+            pyautogui.press('right')
+            last_pressed = 'right'
+            print("Right Pressed")
+            #pyautogui.PAUSE = 2
     elif direction == 'West':
-        pyautogui.press('left')
-        print("Left Pressed")
-        pyautogui.PAUSE = 4
+        if last_pressed != 'left':
+            pyautogui.press('left')
+            last_pressed = 'left'
+            print("Left Pressed")
+            #pyautogui.PAUSE = 2
     elif direction == 'North':
-        pyautogui.press('up')
-        print("Up Pressed")
-        pyautogui.PAUSE = 4
+        if last_pressed != 'up':
+            last_pressed = 'up'
+            pyautogui.press('up')
+            print("Up Pressed")
+            #pyautogui.PAUSE = 2
     elif direction == 'South':
-        pyautogui.press('down')
-        print("Down Pressed")
-        pyautogui.PAUSE = 4
+        if last_pressed != 'down':
+            pyautogui.press('down')
+            last_pressed = 'down'
+            print("Down Pressed")
+            #pyautogui.PAUSE = 2
 
-
-    cv2.putText(frame, direction, (20,40), cv2.FONT_HERSHEY_SIMPLEX, 1, (0,0,255), 3)
 
     #video_shower.frame = frame
     cv2.imshow('Game Control Window', frame)
