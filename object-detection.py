@@ -82,13 +82,13 @@ while True:
             thickness = int(np.sqrt(buffer / float(i + 1)) * 2.5)
             cv2.line(frame, pts[i - 1], pts[i], (0, 0, 255), thickness)
 
-        #Show the output frame
-        cv2.imshow('Frame', frame)
-        key = cv2.waitKey(1) & 0xFF
+    #Show the output frame
+    cv2.imshow('Frame', frame)
+    key = cv2.waitKey(1) & 0xFF
 
-        #If q is pressed, close the window
-        if(key == ord('q')):
-            break
+    #If q is pressed, close the window
+    if(key == ord('q')):
+        break
 #After all the processing, release webcam and destroy all windows
 video_capture.release()
 cv2.destroyAllWindows()
