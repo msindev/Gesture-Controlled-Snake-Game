@@ -24,3 +24,12 @@ Install the libraries using `pip install -r requirements.txt`
  - [OpenCV](https://opencv.org/) - The Open Computer Vision Library
  - [PyAutoGUI](https://pypi.org/project/PyAutoGUI/) - Cross platform GUI Automation Python Module
 
+## Contributing
+Please feel free to contribute to the project and Pull Requests are open for everyone willing to improve upon the project. Feel free to provide any suggestions.
+
+## License
+This project is licensed under the MIT License - see the [LICENSE.md](https://github.com/mohitwildbeast/Gesture-Controlled-Snake-Game/blob/master/LICENSE) file for details.
+## Acknowledgements
+
+ - The inspiration for the project came through PyImageSearch blog's article- [OpenCV Tracking Object in Images](https://www.pyimagesearch.com/2015/09/21/opencv-track-object-movement/) blog post.
+ - PyAutoGUI helped a lot for keyboard automation tasks.
