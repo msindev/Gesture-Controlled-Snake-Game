@@ -20,6 +20,7 @@ Install the libraries using `pip install -r requirements.txt`
  2. Use `python <filename.py>` to run specific files, which are described below.
 
 ## Built With
-[OpenCV](https://opencv.org/) - The Open Computer Vision Library
-[PyAutoGUI](https://pypi.org/project/PyAutoGUI/) - Cross platform GUI Automation Python Module
+
+ - [OpenCV](https://opencv.org/) - The Open Computer Vision Library
+ - [PyAutoGUI](https://pypi.org/project/PyAutoGUI/) - Cross platform GUI Automation Python Module
 
