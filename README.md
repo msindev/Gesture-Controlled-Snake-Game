@@ -1,6 +1,7 @@
 ## Gesture Controlled Snake Game
 This program can be used to play a Snake Game by detecting hand gestures to control movement of the snake on the screen. It has been implemented in Python using OpenCV library. Although, the demo shown here refers to playing a Snake Game, it can be used to play any game or control any application using hand gestures only.
 
+[![](http://img.youtube.com/vi/PE_rgc2K0sg/0.jpg)](http://www.youtube.com/watch?v=PE_rgc2K0sg "Gesture Controlled Snake Game using OpenCV and Python")
 
 ## Getting Started
  ### Prerequisites
