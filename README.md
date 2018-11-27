@@ -41,24 +41,23 @@ This project is licensed under the MIT License - see the [LICENSE.md](https://gi
 ## File Contents
 The entire project has been made using a bottom up approach, and the project consists of the following files which are described below-
  
- - [Object Detection](https://github.com/mohitwildbeast/Gesture-Controlled-Snake-Game/blob/master/object-detection.py)
+ ## [Object Detection](https://github.com/mohitwildbeast/Gesture-Controlled-Snake-Game/blob/master/object-detection.py)
 
 > This script detects a object of specified object colour from the webcam video feed. Using OpenCV library for vision tasks and HSV color space for detecting object of given specific color.  
-
-See the demo on Youtube - [ Object Detection and Motion Tracking in OpenCV](https://www.youtube.com/watch?v=mtGBuMlusXQ)
-
+>See the demo on Youtube - [ Object Detection and Motion Tracking in OpenCV](https://www.youtube.com/watch?v=mtGBuMlusXQ)
 
 
- - [Object Tracking and Direction Detection](https://github.com/mohitwildbeast/Gesture-Controlled-Snake-Game/blob/master/object-tracking-direction-detection.py)
+
+ ## [Object Tracking and Direction Detection](https://github.com/mohitwildbeast/Gesture-Controlled-Snake-Game/blob/master/object-tracking-direction-detection.py)
 
 > This script can detect objects specified by the HSV color and also sense the
 direction of their movement.  
 
 > See the demo on Youtube - [Object Tracking and Direction Detection using OpenCV](https://www.youtube.com/watch?v=zapq9QT9uwc)
 
- - [Game Control Using Object Tracking (Multithreaded Implementation](https://github.com/mohitwildbeast/Gesture-Controlled-Snake-Game/blob/master/game-control-using-object-tracking-multithreaded.py)
+ ## [Game Control Using Object Tracking (Multithreaded Implementation](https://github.com/mohitwildbeast/Gesture-Controlled-Snake-Game/blob/master/game-control-using-object-tracking-multithreaded.py)
 > This script can detect objects specified by the HSV color and also sense the
 direction of their movement.Using this script a Snake Game which has been loaded in the repo, can be played. Implemented using OpenCV. Uses seperate thread for reading frames through OpenCV.  
 
-See the demo on Youtube - [Gesture Controlled Snake Game Playing with OpenCV and Computer Vision | Penguin Coders](https://www.youtube.com/watch?v=PE_rgc2K0sg)
+>See the demo on Youtube - [Gesture Controlled Snake Game Playing with OpenCV and Computer Vision | Penguin Coders](https://www.youtube.com/watch?v=PE_rgc2K0sg)
 
