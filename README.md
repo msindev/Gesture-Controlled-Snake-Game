@@ -61,3 +61,7 @@ direction of their movement.Using this script a Snake Game which has been loaded
 
 >See the demo on Youtube - [Gesture Controlled Snake Game Playing with OpenCV and Computer Vision](https://www.youtube.com/watch?v=PE_rgc2K0sg)
 
+##Snake Game
+>The Snake Game present in this video, has been taken from my previous repository [SnakeFun](https://github.com/mohitwildbeast/SnakeFun). The files from the game corrrespond to SnakeFun.py and settingsSnakeFun.py  
+
+>Run the game using the code ```python SnakeFun.py```
