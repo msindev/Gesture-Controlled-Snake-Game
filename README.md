@@ -55,9 +55,9 @@ direction of their movement.
 
 > See the demo on Youtube - [Object Tracking and Direction Detection using OpenCV](https://www.youtube.com/watch?v=zapq9QT9uwc)
 
- ## [Game Control Using Object Tracking (Multithreaded Implementation](https://github.com/mohitwildbeast/Gesture-Controlled-Snake-Game/blob/master/game-control-using-object-tracking-multithreaded.py)
+ ## [Game Control Using Object Tracking (Multithreaded Implementation)](https://github.com/mohitwildbeast/Gesture-Controlled-Snake-Game/blob/master/game-control-using-object-tracking-multithreaded.py)
 > This script can detect objects specified by the HSV color and also sense the
 direction of their movement.Using this script a Snake Game which has been loaded in the repo, can be played. Implemented using OpenCV. Uses seperate thread for reading frames through OpenCV.  
 
->See the demo on Youtube - [Gesture Controlled Snake Game Playing with OpenCV and Computer Vision | Penguin Coders](https://www.youtube.com/watch?v=PE_rgc2K0sg)
+>See the demo on Youtube - [Gesture Controlled Snake Game Playing with OpenCV and Computer Vision](https://www.youtube.com/watch?v=PE_rgc2K0sg)
 
