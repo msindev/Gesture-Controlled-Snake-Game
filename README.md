@@ -65,3 +65,5 @@ direction of their movement.Using this script a Snake Game which has been loaded
 >The Snake Game present in this video, has been taken from my previous repository [SnakeFun](https://github.com/mohitwildbeast/SnakeFun). The files from the game corrrespond to SnakeFun.py and settingsSnakeFun.py  
 
 >Run the game using the code ```python SnakeFun.py```
+
+
