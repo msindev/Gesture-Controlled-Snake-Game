@@ -50,7 +50,7 @@ The entire project has been made using a bottom up approach, and the project con
 
  ## [Object Tracking and Direction Detection](https://github.com/mohitwildbeast/Gesture-Controlled-Snake-Game/blob/master/object-tracking-direction-detection.py)
 
-> This script can detect objects specified by the HSV color and also sense the
+> This script can detect objects specified by the HSV color and also sense
 direction of their movement.  
 
 > See the demo on Youtube - [Object Tracking and Direction Detection using OpenCV](https://www.youtube.com/watch?v=zapq9QT9uwc)
