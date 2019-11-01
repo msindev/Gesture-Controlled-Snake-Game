@@ -1,5 +1,6 @@
 ## Gesture Controlled Snake Game
 This program can be used to play a Snake Game (or like it) by detecting hand gestures to control movement of the snake on the screen. It has been implemented in Python using OpenCV library. Although, the demo shown here refers to playing a Snake Game, it can be used to play any game or control any application using hand gestures only.
+This program shall be used to play a Snake Game by detecting hand gestures to control movement of the snake on the screen. It has been implemented in Python using OpenCV library. Although, the demo shown here refers to playing a Snake Game, it can be used to play any game or control any application using hand gestures only.
 <p align="center">
   <img src="http://img.youtube.com/vi/PE_rgc2K0sg/0.jpg?raw=true" alt="Gesture Controlled Snake Game Using OpenCV and Python"/>
 </p>
@@ -50,7 +51,7 @@ The entire project has been made using a bottom up approach, and the project con
 
  ## [Object Tracking and Direction Detection](https://github.com/mohitwildbeast/Gesture-Controlled-Snake-Game/blob/master/object-tracking-direction-detection.py)
 
-> This script can detect objects specified by the HSV color and also sense the
+> This script can detect objects specified by the HSV color and also sense
 direction of their movement.  
 
 > See the demo on Youtube - [Object Tracking and Direction Detection using OpenCV](https://www.youtube.com/watch?v=zapq9QT9uwc)
